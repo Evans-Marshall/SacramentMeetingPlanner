@@ -8,7 +8,7 @@ namespace SacramentMeetingPlanner.Models
     public class Elements
     {
         public Guid ID { get; set; }
-        public string MeetingId { get; set; }
+        public string MeetingElementsId { get; set; }
         public string Type { get; set; }
         
         public string Assignment { get; set; }

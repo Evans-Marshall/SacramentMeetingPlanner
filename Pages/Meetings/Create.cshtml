@@ -1,6 +1,5 @@
 ﻿@page
 @model SacramentMeetingPlanner.Pages.Meetings.CreateModel
-
 @{
     ViewData["Title"] = "Create";
 }
@@ -48,14 +47,14 @@
                 <input asp-for="Meeting.SacramentHymn" class="form-control" />
                 <span asp-validation-for="Meeting.SacramentHymn" class="text-danger"></span>
             </div>
-
+           
             <!--FOR EACH-->
             <div class="col-md-offset-2 col-md-10">
                 <table>
                     <tr>
                         @{
                             int cnt = 0;
-                            List<SacramentMeetingPlanner.Models.Elements > Elements = ViewBag.Elements;
+                            List<SacramentMeetingPlanner.Models.Elements> Elements = ViewBag.Elements;
 
                             foreach (var Element in Elements)
                             {
@@ -91,13 +90,13 @@
                     <input type="submit" value="Create" class="btn btn-primary" />
                 </div>
             </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
