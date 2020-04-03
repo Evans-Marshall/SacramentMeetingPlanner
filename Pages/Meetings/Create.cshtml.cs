@@ -42,21 +42,6 @@ namespace SacramentMeetingPlanner.Pages.Meetings
             return RedirectToPage("./Index");
         }
 
-        private void PopulateNewElement()
-        {
-            var allElements = _context.Meeting;
-            var viewModel = new List<Elements>();
-            var i = 0;
-            foreach (var element in allElements)
-            {
-                i++;
-                viewModel.Add(new Elements
-                {
-                    MeetingElementsId = i,
-                    ID = Meeting.MeetingID
-                }); ;
-            }
-            ViewData["Elements"] = viewModel;
-        }
+
     }
 }

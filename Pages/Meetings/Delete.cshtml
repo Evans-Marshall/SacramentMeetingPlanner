@@ -55,30 +55,6 @@
             @Html.DisplayFor(model => model.Meeting.SacramentHymn)
         </dd>
 
-        <!--FOR EACH-->
-        <!--FOR EACH-->
-        <div class="col-md-offset-2 col-md-10">
-            <table>
-                <tr>
-                    @{
-                        int cnt = 0;
-                        List<SacramentMeetingPlanner.Models.Elements> Elements = ViewBag.Elements;
-
-                        foreach (var Element in Elements)
-                        {
-                            if (cnt++ % 3 == 0)
-                            {
-                            @:</tr><tr>
-                            }
-                            @:<td>
-                                //DATA GOES HERE!!!!
-                            @:</td>
-                        }
-                    @:</tr>
-                    }
-                </table>
-            </div>
-
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.Meeting.ClosingHymnNumber)
             </dt>

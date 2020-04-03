@@ -10,8 +10,8 @@ using SacramentMeetingPlanner.Data;
 namespace SacramentMeetingPlanner.Migrations
 {
     [DbContext(typeof(SacramentMeetingPlannerContext))]
-    [Migration("20200403031005_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200403034917_FirstSpeaker")]
+    partial class FirstSpeaker
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,34 +20,6 @@ namespace SacramentMeetingPlanner.Migrations
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("SacramentMeetingPlanner.Models.Elements", b =>
-                {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Assignment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("HymnNumber")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MeetingElementsId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("MeetingID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("MeetingID");
-
-                    b.ToTable("Elements");
-                });
 
             modelBuilder.Entity("SacramentMeetingPlanner.Models.Meeting", b =>
                 {
@@ -70,6 +42,15 @@ namespace SacramentMeetingPlanner.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("FirstSpeaker")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IntermediateHymn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IntermediateHymnNumber")
+                        .HasColumnType("int");
+
                     b.Property<string>("OpeningHymn")
                         .HasColumnType("nvarchar(max)");
 
@@ -85,16 +66,12 @@ namespace SacramentMeetingPlanner.Migrations
                     b.Property<int>("SacramentHymnNumber")
                         .HasColumnType("int");
 
+                    b.Property<string>("SecondSpeaker")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("MeetingID");
 
                     b.ToTable("Meeting");
-                });
-
-            modelBuilder.Entity("SacramentMeetingPlanner.Models.Elements", b =>
-                {
-                    b.HasOne("SacramentMeetingPlanner.Models.Meeting", null)
-                        .WithMany("Elements")
-                        .HasForeignKey("MeetingID");
                 });
 #pragma warning restore 612, 618
         }

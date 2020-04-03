@@ -48,8 +48,7 @@
                 <span asp-validation-for="Meeting.SacramentHymn" class="text-danger"></span>
             </div>
 
-           
-
+            <!--FOR EACH-->
             <div class="form-group">
                 <label asp-for="Meeting.ClosingHymnNumber" class="control-label"></label>
                 <input asp-for="Meeting.ClosingHymnNumber" class="form-control" />
@@ -69,13 +68,14 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
-        </div>
+        <button onclick="PopulateNewElementAsync">Add Element</button>
     </div>
+</div>
 
-    <div>
-        <a asp-page="Index">Back to List</a>
-    </div>
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

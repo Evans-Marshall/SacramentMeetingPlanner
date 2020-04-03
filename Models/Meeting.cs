@@ -21,7 +21,10 @@ namespace SacramentMeetingPlanner.Models
         public string ClosingHymn { get; set; }
         public string ClosingPrayer { get; set; }
 
-        public ICollection<Elements> Elements { get; set; }
-
+        //OPTIONAL FIELDS
+        public string FirstSpeaker { get; set; }
+        public string SecondSpeaker { get; set; }
+        public int IntermediateHymnNumber { get; set; }
+        public string IntermediateHymn { get; set; }
     }
 }

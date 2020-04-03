@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SacramentMeetingPlanner.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class FirstSpeaker : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,46 +21,20 @@ namespace SacramentMeetingPlanner.Migrations
                     SacramentHymn = table.Column<string>(nullable: true),
                     ClosingHymnNumber = table.Column<int>(nullable: false),
                     ClosingHymn = table.Column<string>(nullable: true),
-                    ClosingPrayer = table.Column<string>(nullable: true)
+                    ClosingPrayer = table.Column<string>(nullable: true),
+                    FirstSpeaker = table.Column<string>(nullable: true),
+                    SecondSpeaker = table.Column<string>(nullable: true),
+                    IntermediateHymnNumber = table.Column<int>(nullable: false),
+                    IntermediateHymn = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Meeting", x => x.MeetingID);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "Elements",
-                columns: table => new
-                {
-                    ID = table.Column<Guid>(nullable: false),
-                    MeetingElementsId = table.Column<int>(nullable: false),
-                    Type = table.Column<string>(nullable: true),
-                    Assignment = table.Column<string>(nullable: true),
-                    HymnNumber = table.Column<int>(nullable: false),
-                    MeetingID = table.Column<Guid>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Elements", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_Elements_Meeting_MeetingID",
-                        column: x => x.MeetingID,
-                        principalTable: "Meeting",
-                        principalColumn: "MeetingID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Elements_MeetingID",
-                table: "Elements",
-                column: "MeetingID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Elements");
-
             migrationBuilder.DropTable(
                 name: "Meeting");
         }
