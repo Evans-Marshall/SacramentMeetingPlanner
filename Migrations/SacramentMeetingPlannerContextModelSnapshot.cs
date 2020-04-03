@@ -31,8 +31,8 @@ namespace SacramentMeetingPlanner.Migrations
                     b.Property<int>("HymnNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("MeetingElementsId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("MeetingElementsId")
+                        .HasColumnType("int");
 
                     b.Property<Guid?>("MeetingID")
                         .HasColumnType("uniqueidentifier");

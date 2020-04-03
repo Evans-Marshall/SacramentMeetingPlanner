@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SacramentMeetingPlanner.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -33,7 +33,7 @@ namespace SacramentMeetingPlanner.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(nullable: false),
-                    MeetingElementsId = table.Column<string>(nullable: true),
+                    MeetingElementsId = table.Column<int>(nullable: false),
                     Type = table.Column<string>(nullable: true),
                     Assignment = table.Column<string>(nullable: true),
                     HymnNumber = table.Column<int>(nullable: false),

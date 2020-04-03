@@ -42,20 +42,21 @@ namespace SacramentMeetingPlanner.Pages.Meetings
             return RedirectToPage("./Index");
         }
 
-        private void PopulateAssignedCourseData(Meeting meetings)
+        private void PopulateNewElement()
         {
-            var allElements = _context.Elements;
-            var instructorCourses = new HashSet<Guid>(meetings.Elements.Select(meetings => meetings.MeetingID));
-            var viewModel = new List<AssignedCourseData>();
-            foreach (var course in allElements)
+            var allElements = _context.Meeting;
+            var viewModel = new List<Elements>();
+            var i = 0;
+            foreach (var element in allElements)
             {
-                viewModel.Add(new AssignedCourseData
+                i++;
+                viewModel.Add(new Elements
                 {
-                    CourseID = course.CourseID,
-                    Title = course.Title,
-                    Assigned = instructorCourses.Contains(course.CourseID)
-                });
+                    MeetingElementsId = i,
+                    ID = Meeting.MeetingID
+                }); ;
             }
-            ViewData["Courses"] = viewModel;
+            ViewData["Elements"] = viewModel;
         }
+    }
 }

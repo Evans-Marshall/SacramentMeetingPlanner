@@ -10,7 +10,7 @@ using SacramentMeetingPlanner.Data;
 namespace SacramentMeetingPlanner.Migrations
 {
     [DbContext(typeof(SacramentMeetingPlannerContext))]
-    [Migration("20200403020827_InitialCreate")]
+    [Migration("20200403031005_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,8 +33,8 @@ namespace SacramentMeetingPlanner.Migrations
                     b.Property<int>("HymnNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("MeetingElementsId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("MeetingElementsId")
+                        .HasColumnType("int");
 
                     b.Property<Guid?>("MeetingID")
                         .HasColumnType("uniqueidentifier");
