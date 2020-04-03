@@ -41,7 +41,5 @@ namespace SacramentMeetingPlanner.Pages.Meetings
 
             return RedirectToPage("./Index");
         }
-
-
     }
 }
