@@ -167,7 +167,11 @@ footer a {
     transition: .5s;
 }
 
-.form-control:hover {
+.form-control:disabled{
+    background-color: white;
+}
+
+.form-control:hover:enabled {
     transform: scale(1.1);
     background-color: white;
 }
