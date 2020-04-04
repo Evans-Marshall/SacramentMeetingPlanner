@@ -2,70 +2,176 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-image: url("../img/paper.jpg");
+    background-size: cover;
+    background-position: center 18%;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
+
+main {
+    top: -80px;
+    left: 12px;
+    position: relative;
+    /* background-color: rgba(255,255,255,0.9); */
+    padding: 30px;
+    margin-top: 70px;
+}
+
+.whiteBack {
+    background-color: rgba(255,255,255,0.9);
+    padding: 50px;
+}
+
+@media screen and (max-width: 1780px) {
+
+    main {
+        background-color: rgba(255,255,255,0.9);
+        top: 0px;
+    }
+}
+
+.container {
+    padding: inherit -10px;
+}
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    text-align: center;
+}
+
+footer a {
+    color: lightblue;
+}
+
+.nav-link, a:hover {
+    color: deepskyblue;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.preview {
+    position: absolute;
+    height: 300px !important;
+    float: right;
+    top: -100px;
+    margin-left: 60px;
+}
+
+
+/* Forms */
+
+.row {
+    margin: 0px auto;
+    max-width: 1080px;
+    display: table;
+    width: 75%;
+}
+
+.form-control, .control-label {
+    display: inline-block;
+    margin: 5px !important;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.form-control {
+    width: 60%;
+}
+
+.form-hymn {
+    width: 10%;
+}
+.form-hymnName {
+    width: 48%;
+}
+
+.form-control {
+    background-color: ivory;
+    transition: .5s;
+}
+
+.form-control:hover {
+    transform: scale(1.1);
+    background-color: white;
+}
+
+.control-label {
+    width: 30%;
 }

@@ -9,8 +9,8 @@
 
 <h4>Meeting</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="">
+    <div class="row">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -24,8 +24,10 @@
                 <span asp-validation-for="Meeting.Conducting" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.OpeningHymnNumber" class="control-label"></label>
-                <input asp-for="Meeting.OpeningHymnNumber" class="form-control" />
+                <label asp-for="Meeting.OpeningHymn" class="control-label"></label>
+                <input asp-for="Meeting.OpeningHymnNumber" class="form-control form-hymn" id="1" onfocusout="hymn(this)"/>
+                <input asp-for="Meeting.OpeningHymn" class="form-control form-hymnName" id="hymn1"/>
+                <span asp-validation-for="Meeting.OpeningHymn" class="text-danger"></span>
                 <span asp-validation-for="Meeting.OpeningHymnNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -34,34 +36,11 @@
                 <span asp-validation-for="Meeting.OpeningPrayer" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.OpeningHymn" class="control-label"></label>
-                <input asp-for="Meeting.OpeningHymn" class="form-control" />
-                <span asp-validation-for="Meeting.OpeningHymn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Meeting.SacramentHymnNumber" class="control-label"></label>
-                <input asp-for="Meeting.SacramentHymnNumber" class="form-control" />
-                <span asp-validation-for="Meeting.SacramentHymnNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Meeting.SacramentHymn" class="control-label"></label>
-                <input asp-for="Meeting.SacramentHymn" class="form-control" />
+                <input asp-for="Meeting.SacramentHymnNumber" class="form-control form-hymn" id="2" onfocusout="hymn(this)" />
+                <input asp-for="Meeting.SacramentHymn" class="form-control form-hymnName" id="hymn2"/>
                 <span asp-validation-for="Meeting.SacramentHymn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Meeting.ClosingHymnNumber" class="control-label"></label>
-                <input asp-for="Meeting.ClosingHymnNumber" class="form-control" />
-                <span asp-validation-for="Meeting.ClosingHymnNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Meeting.ClosingHymn" class="control-label"></label>
-                <input asp-for="Meeting.ClosingHymn" class="form-control" />
-                <span asp-validation-for="Meeting.ClosingHymn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Meeting.ClosingPrayer" class="control-label"></label>
-                <input asp-for="Meeting.ClosingPrayer" class="form-control" />
-                <span asp-validation-for="Meeting.ClosingPrayer" class="text-danger"></span>
+                <span asp-validation-for="Meeting.SacramentHymnNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.FirstSpeaker" class="control-label"></label>
@@ -69,30 +48,40 @@
                 <span asp-validation-for="Meeting.FirstSpeaker" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Meeting.IntermediateHymn" class="control-label"></label>
+                <input asp-for="Meeting.IntermediateHymnNumber" class="form-control form-hymn" id="3" onfocusout="hymn(this)" />
+                <input asp-for="Meeting.IntermediateHymn" class="form-control form-hymnName" id="hymn3"/>
+                <span asp-validation-for="Meeting.IntermediateHymn" class="text-danger"></span>
+                <span asp-validation-for="Meeting.IntermediateHymnNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Meeting.SecondSpeaker" class="control-label"></label>
                 <input asp-for="Meeting.SecondSpeaker" class="form-control" />
                 <span asp-validation-for="Meeting.SecondSpeaker" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.IntermediateHymnNumber" class="control-label"></label>
-                <input asp-for="Meeting.IntermediateHymnNumber" class="form-control" />
-                <span asp-validation-for="Meeting.IntermediateHymnNumber" class="text-danger"></span>
+                <label asp-for="Meeting.ClosingHymn" class="control-label"></label>
+                <input asp-for="Meeting.ClosingHymnNumber" class="form-control form-hymn" id="4" onfocusout="hymn(this)" />
+                <input asp-for="Meeting.ClosingHymn" class="form-control form-hymnName" id="hymn4" />
+                <span asp-validation-for="Meeting.ClosingHymn" class="text-danger"></span>
+                <span asp-validation-for="Meeting.ClosingHymnNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.IntermediateHymn" class="control-label"></label>
-                <input asp-for="Meeting.IntermediateHymn" class="form-control" />
-                <span asp-validation-for="Meeting.IntermediateHymn" class="text-danger"></span>
+                <label asp-for="Meeting.ClosingPrayer" class="control-label"></label>
+                <input asp-for="Meeting.ClosingPrayer" class="form-control" />
+                <span asp-validation-for="Meeting.ClosingPrayer" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary btn-block" />
             </div>
         </form>
+        <div>
+            <a asp-page="Index">Back to List</a>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
