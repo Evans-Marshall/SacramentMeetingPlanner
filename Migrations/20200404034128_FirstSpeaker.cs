@@ -2,7 +2,7 @@
 
 namespace SacramentMeetingPlanner.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class FirstSpeaker : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

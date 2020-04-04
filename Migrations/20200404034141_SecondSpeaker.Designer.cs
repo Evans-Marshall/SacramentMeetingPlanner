@@ -10,7 +10,7 @@ using SacramentMeetingPlanner.Data;
 namespace SacramentMeetingPlanner.Migrations
 {
     [DbContext(typeof(SacramentMeetingPlannerContext))]
-    [Migration("20200403034939_SecondSpeaker")]
+    [Migration("20200404034141_SecondSpeaker")]
     partial class SecondSpeaker
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -10,8 +10,8 @@ using SacramentMeetingPlanner.Data;
 namespace SacramentMeetingPlanner.Migrations
 {
     [DbContext(typeof(SacramentMeetingPlannerContext))]
-    [Migration("20200403035055_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200404034050_IntermediateHymn")]
+    partial class IntermediateHymn
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
