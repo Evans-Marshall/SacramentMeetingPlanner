@@ -144,14 +144,14 @@ footer a {
     width: 75%;
 }
 
-.form-control, .control-label {
+.form-control, .control-label, .form-Data {
     display: inline-block;
     margin: 5px !important;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.form-control {
+.form-control, .form-Data {
     width: 60%;
 }
 
