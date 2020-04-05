@@ -10,6 +10,8 @@ function hymn(button) {
         document.getElementById(input).innerHTML = "That is not an valid hymn number";
     } else {
         var input = "hymn" + button.id;
+        var e = "error" + button.id;
+        document.getElementById(e).innerHTML = "";
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "https://raw.githubusercontent.com/pseudosavant/LDSHymns/master/hymns.json", true);
