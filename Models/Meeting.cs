@@ -13,18 +13,20 @@ namespace SacramentMeetingPlanner.Models
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public string Conducting { get; set; }
+
+        
+
         [Range(1, 341)]
-        [Column(TypeName = "integer")]
+       
         public int OpeningHymnNumber { get; set; }
-        [Range(1, 341)]
-        [Column(TypeName = "integer")]
         public string OpeningPrayer { get; set; }
         public string OpeningHymn { get; set; }
+
         [Range(1, 341)]
         public int SacramentHymnNumber { get; set; }
         public string SacramentHymn { get; set; }
+
         [Range(1, 341)]
-        [Column(TypeName = "integer")]
         public int ClosingHymnNumber { get; set; }
         public string ClosingHymn { get; set; }
         public string ClosingPrayer { get; set; }
@@ -32,8 +34,9 @@ namespace SacramentMeetingPlanner.Models
         //OPTIONAL FIELDS
         public string FirstSpeaker { get; set; }
         public string SecondSpeaker { get; set; }
+
         [Range(1, 341)]
-        [Column(TypeName = "integer")]
+       
         public int IntermediateHymnNumber { get; set; }
         public string IntermediateHymn { get; set; }
     }
